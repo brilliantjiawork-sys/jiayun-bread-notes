@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jiayun 的面团手记全部内容。" />
+    <title>全部内容｜Jiayun 的面团手记</title>
+    <link rel="icon" href="public/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">J</span><span><b>JIAYUN</b><small>DOUGH NOTES</small></span></a>
+      <button class="menu-button" type="button" aria-label="打开菜单" aria-expanded="false"><span></span><span></span></button>
+      <nav class="main-nav"><a href="index.html">首页</a><a class="active" href="archive.html?category=recipe">配方与制作</a><a href="archive.html?category=knowledge">烘焙知识</a><a href="archive.html?category=journal">制作手记</a><a href="index.html#gallery">作品画廊</a><a href="about.html">关于我</a></nav>
+    </header>
+    <main class="archive-page shell">
+      <header class="page-intro">
+        <p class="eyebrow">ALL CONTENT</p>
+        <h1 id="archive-title">全部内容</h1>
+        <p id="archive-description">配方、烘焙知识、工具使用与制作记录。</p>
+      </header>
+      <div class="filters" aria-label="筛选内容">
+        <a data-filter="all" href="archive.html">全部</a>
+        <a data-filter="recipe" href="archive.html?category=recipe">配方与制作</a>
+        <a data-filter="knowledge" href="archive.html?category=knowledge">烘焙知识</a>
+        <a data-filter="journal" href="archive.html?category=journal">制作手记</a>
+        <a data-filter="tools" href="archive.html?category=tools">食材与工具</a>
+      </div>
+      <div class="archive-grid">
+        <article class="archive-card" data-category="recipe"><a href="post.html"><img src="public/images/loaf.jpg" alt="欧式面包" /></a><p class="meta"><span>配方与制作</span><time>2026.07.12</time></p><h2><a href="post.html">高含水吐司：柔软不等于湿黏</a></h2><p>一份可以稳定重复制作的基础吐司配方。</p></article>
+        <article class="archive-card" data-category="knowledge"><a href="post.html"><img src="public/images/pizza-oven.jpg" alt="披萨烤制" /></a><p class="meta"><span>烘焙知识</span><time>2026.07.08</time></p><h2><a href="post.html">一张披萨的发酵时间表</a></h2><p>室温、冷藏与酵母用量如何配合。</p></article>
+        <article class="archive-card" data-category="journal"><a href="post.html"><img src="public/images/dough.jpg" alt="揉制面团" /></a><p class="meta"><span>制作手记</span><time>2026.07.02</time></p><h2><a href="post.html">面团总是升温过快，我调整了这三步</a></h2><p>一次夏季揉面与发酵的完整复盘。</p></article>
+        <article class="archive-card" data-category="knowledge"><a href="post.html"><img src="public/images/hands.jpg" alt="手捧面包" /></a><p class="meta"><span>烘焙知识</span><time>2026.06.25</time></p><h2><a href="post.html">波兰种、中种与鲁邦种怎么选</a></h2><p>根据风味、组织和时间安排选择预发酵。</p></article>
+        <article class="archive-card" data-category="tools"><a href="post.html"><img src="public/images/rack.jpg" alt="面包冷却架" /></a><p class="meta"><span>食材与工具</span><time>2026.06.18</time></p><h2><a href="post.html">家庭烤箱的真实温度怎么测</a></h2><p>温度计的放置位置和预热时间记录。</p></article>
+        <article class="archive-card" data-category="recipe"><a href="post.html"><img src="public/images/hero.jpg" alt="酸种面包" /></a><p class="meta"><span>配方与制作</span><time>2026.06.10</time></p><h2><a href="post.html">基础乡村酸种：从喂养到出炉</a></h2><p>按时间顺序整理的一次完整制作。</p></article>
+      </div>
+      <p class="empty-state" hidden>这个分类还没有内容。</p>
+    </main>
+    <footer class="site-footer"><div class="shell footer-grid"><div><p class="footer-logo">JIAYUN<br /><span>DOUGH NOTES</span></p></div><div><p>内容</p><a href="archive.html?category=recipe">配方与制作</a><a href="archive.html?category=knowledge">烘焙知识</a></div><div><p>更多</p><a href="index.html#gallery">作品画廊</a><a href="about.html">关于我</a></div><div class="footer-note"><p>© 2026 JIAYUN</p></div></div></footer>
+  </body>
+</html>
