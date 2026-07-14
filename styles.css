@@ -359,3 +359,177 @@ img { display: block; width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
+
+/* New positioning: baking + homemade drinks */
+.gallery-intro {
+  max-width: 760px;
+  margin: -28px 0 42px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.gallery-tabs { display: flex; gap: 12px; }
+.gallery-tabs button {
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font: 600 12px/1 var(--sans);
+  cursor: pointer;
+}
+.gallery-tabs button.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.gallery-panel[hidden] { display: none; }
+
+.gallery-grid {
+  grid-template-columns: 1.05fr .95fr .95fr;
+  grid-template-rows: repeat(2, minmax(230px, 330px));
+}
+.gallery-grid .gallery-item:nth-child(2) { grid-column: 2 / 4; }
+.gallery-item img { object-position: center; }
+
+.gallery-panel--drinks {
+  min-height: 540px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 40px;
+  align-items: center;
+  padding: clamp(38px, 7vw, 90px);
+  background: #d9dfcf;
+}
+.drink-promise { max-width: 620px; }
+.drink-promise h3 { margin: 0 0 22px; font: 500 clamp(34px, 4.2vw, 62px)/1.22 var(--serif); letter-spacing: -.035em; }
+.drink-promise > p:last-child { margin: 0; color: #555c4e; line-height: 1.9; }
+.drink-orbit { position: relative; min-height: 330px; border: 1px solid rgba(32,31,27,.25); border-radius: 50%; }
+.drink-orbit::before, .drink-orbit::after { content: ""; position: absolute; inset: 17%; border: 1px solid rgba(32,31,27,.2); border-radius: 50%; }
+.drink-orbit::after { inset: 34%; background: rgba(255,255,255,.28); }
+.drink-orbit span { position: absolute; z-index: 1; font: 700 10px/1 var(--sans); letter-spacing: .16em; }
+.drink-orbit span:nth-child(1) { left: 12%; top: 26%; }
+.drink-orbit span:nth-child(2) { right: 13%; top: 22%; }
+.drink-orbit span:nth-child(3) { left: 16%; bottom: 20%; }
+.drink-orbit span:nth-child(4) { right: 16%; bottom: 23%; }
+
+.recipe-paths { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(255,255,255,.22); margin-bottom: 42px; }
+.recipe-paths article { min-height: 220px; padding: 34px 34px 36px 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+.recipe-paths article:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.22); }
+.recipe-paths article:nth-child(even) { padding-left: 34px; }
+.recipe-paths span { color: #d1a875; font-size: 10px; letter-spacing: .14em; }
+.recipe-paths h3 { margin: 22px 0 12px; font: 500 clamp(28px, 3vw, 42px)/1.2 var(--serif); }
+.recipe-paths p { max-width: 500px; margin: 0; color: #aaa99f; font-size: 13px; line-height: 1.8; }
+.button--light { background: #f0e9dd; color: var(--ink); }
+
+.card-image--drink, .archive-card__image--drink {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  aspect-ratio: 16/10;
+  background: #d9dfcf;
+  color: #4f5a49;
+  overflow: hidden;
+}
+.card-image--drink::before, .archive-card__image--drink::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(32,31,27,.24);
+  border-radius: 50%;
+}
+.card-image--drink span, .archive-card__image--drink span { z-index: 1; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
+
+.favorites-section { background: #e8ded0; }
+.favorites-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+.favorites-grid a { display: grid; grid-template-columns: 44px 1fr 28px; gap: 12px 20px; align-items: center; min-height: 190px; padding: 32px; border-bottom: 1px solid var(--line); }
+.favorites-grid a:nth-child(odd) { border-right: 1px solid var(--line); padding-left: 0; }
+.favorites-grid span { color: var(--rust); font-size: 10px; letter-spacing: .13em; }
+.favorites-grid h3 { grid-column: 2; margin: 0; font: 500 clamp(24px, 2.4vw, 34px)/1.2 var(--serif); }
+.favorites-grid p { grid-column: 2; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.favorites-grid b { grid-column: 3; grid-row: 1 / 4; font-size: 24px; font-weight: 400; transition: transform .2s; }
+.favorites-grid a:hover b { transform: translateX(5px); }
+.trust-note { margin: 30px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+
+.archive-card__image { display: block; overflow: hidden; background: var(--paper-deep); }
+.archive-card__image img { aspect-ratio: 4/3; object-fit: cover; filter: saturate(.78); transition: transform .5s; }
+a.archive-card__image:hover img { transform: scale(1.03); }
+.archive-card__image--drink { aspect-ratio: 4/3; }
+.archive-card h2:not(:has(a)) { margin: 0 0 9px; font: 500 24px/1.35 var(--serif); }
+
+.gallery-item--pizza,
+.card-image--pizza,
+.archive-card__image--pizza {
+  background:
+    radial-gradient(circle at 48% 48%, transparent 0 23%, rgba(255,255,255,.12) 23.5% 24.5%, transparent 25%),
+    linear-gradient(135deg, #8b3525, #d67b46 55%, #e9b56f);
+  color: #fff7ec;
+}
+.gallery-item--pizza > div,
+.card-image--pizza,
+.archive-card__image--pizza,
+.archive-card__image--notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  letter-spacing: .14em;
+}
+.gallery-item--pizza span,
+.card-image--pizza span,
+.archive-card__image--pizza span {
+  font-family: Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  line-height: .9;
+}
+.gallery-item--pizza b { font-size: clamp(3rem, 8vw, 7rem); line-height: 1; }
+.gallery-item--pizza small,
+.card-image--pizza b,
+.archive-card__image--pizza b { font-size: .72rem; }
+.archive-card__image--pizza,
+.archive-card__image--notes { aspect-ratio: 4/3; }
+.archive-card__image--notes { background: #e8dfd1; color: #3e332d; }
+.archive-card__image--notes span { font-size: .75rem; letter-spacing: .3em; }
+.archive-card__image--notes b { font-family: Georgia, serif; font-size: 3rem; }
+
+.about-image { margin: 0; }
+.about-image figcaption { margin-top: 12px; color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+.article-body ul { margin: 0; padding-left: 24px; }
+.article-body li { margin-bottom: 16px; padding-left: 8px; }
+
+@media (max-width: 900px) {
+  .gallery-heading { align-items: flex-end; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 440px 250px 280px; }
+  .gallery-grid .gallery-item--tall { grid-column: 1 / 3; grid-row: auto; }
+  .gallery-grid .gallery-item:nth-child(2) { grid-column: 1 / 3; }
+  .gallery-panel--drinks { grid-template-columns: 1fr; }
+  .drink-orbit { min-height: 280px; }
+  .favorites-grid { grid-template-columns: 1fr; }
+  .favorites-grid a:nth-child(odd) { border-right: 0; padding-left: 32px; }
+}
+
+@media (max-width: 600px) {
+  .site-header { height: 70px; }
+  .main-nav { inset: 70px 0 auto; max-height: calc(100vh - 70px); overflow-y: auto; }
+  .main-nav a { min-height: 52px; }
+  .hero h1 { font-size: clamp(42px, 12.2vw, 52px); }
+  .hero-intro { line-height: 1.8; }
+  .hero-visual img { aspect-ratio: 4/3; }
+  .gallery-heading { flex-direction: column; align-items: flex-start; }
+  .gallery-tabs { width: 100%; }
+  .gallery-tabs button { flex: 1; }
+  .gallery-intro { margin-top: -12px; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 310px); }
+  .gallery-grid .gallery-item--tall, .gallery-grid .gallery-item:nth-child(2) { grid-column: auto; grid-row: auto; }
+  .gallery-panel--drinks { min-height: 600px; padding: 34px 24px; }
+  .drink-promise h3 { font-size: 35px; }
+  .drink-orbit { min-height: 260px; }
+  .recipe-paths { grid-template-columns: 1fr; }
+  .recipe-paths article, .recipe-paths article:nth-child(even) { min-height: auto; padding: 28px 0; border-right: 0; }
+  .card-image--drink { aspect-ratio: 4/3; }
+  .favorites-grid a, .favorites-grid a:nth-child(odd) { grid-template-columns: 32px 1fr 22px; min-height: 175px; padding: 28px 0; }
+  .favorites-grid h3 { font-size: 25px; }
+  .about-title h1 { font-size: 45px; }
+  .about-image img { height: auto; aspect-ratio: 4/5; }
+  .archive-card__image img, .archive-card__image--drink { aspect-ratio: 4/3; }
+}
